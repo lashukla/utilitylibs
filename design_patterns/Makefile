@@ -2,7 +2,7 @@ CFLAGS = -O -std=c++11
 LDFLAGS = -pthread
 CC = g++
 
-ALL_TARGET = singleton factory abstractfactory prototype composite builder observer
+ALL_TARGET = singleton factory abstractfactory prototype composite builder observer bridge
 
 all: $(ALL_TARGET)
 
@@ -26,6 +26,9 @@ builder: builder.cpp
 
 observer: observer.cpp
 	$(CC) -o observer observer.cpp $(CFLAGS)
+
+bridge: bridge.cpp
+	$(CC) -o bridge bridge.cpp $(CFLAGS)
 
 clean:
 	rm -f core $(ALL_TARGET) *.o
